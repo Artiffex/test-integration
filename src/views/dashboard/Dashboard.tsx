@@ -20,6 +20,7 @@ import Text2 from "../../components/text/Text2";
 import ShoppingCartOutlinedIcon from "@mui/icons-material/ShoppingCartOutlined";
 import RemoveRedEyeOutlinedIcon from "@mui/icons-material/RemoveRedEyeOutlined";
 import { useNavigate } from "react-router-dom";
+import RewardsCalculator from "../../components/staking/RewardsCalculator";
 
 const Dashboard = () => {
   const [isPublished, setIsPublished] = useState(false);
@@ -51,7 +52,7 @@ const Dashboard = () => {
       <Box sx={{ background: "linear-gradient(to bottom, #173039, #00b4c9)" }}>
         <Box
           sx={{
-            padding: "50px 80px",
+            padding: { xs: "32px 20px", md: "50px 80px" },
             [theme.breakpoints.up("sm")]: { maxWidth: "1400px" },
             width: "calc(100vw - 6px)",
             margin: "auto",
@@ -60,8 +61,8 @@ const Dashboard = () => {
         >
           <Typography
             sx={{
-              fontSize: "45px",
-              lineHeight: "60px",
+              fontSize: { xs: "34px", md: "45px" },
+              lineHeight: { xs: "42px", md: "60px" },
               color: "#fff",
               fontWeight: 700,
               marginBottom: "20px",
@@ -98,20 +99,39 @@ const Dashboard = () => {
       </Box>
       <Box
         sx={{
+          backgroundColor: theme.palette.background.default,
+          px: { xs: 2, sm: 3 },
+          py: { xs: 4, md: 6 },
+        }}
+      >
+        <Box sx={{ maxWidth: "1400px", mx: "auto" }}>
+          <RewardsCalculator />
+        </Box>
+      </Box>
+      <Box
+        sx={{
           minHeight: "calc(100vh - 450px)",
-          backgroundColor: "#fff",
-          padding: "80px 24px",
+          backgroundColor: theme.palette.background.paper,
+          padding: { xs: "40px 16px", md: "80px 24px" },
           display: "flex",
+          flexDirection: { xs: "column", md: "row" },
           gap: "20px",
         }}
       >
-        <Box sx={{ display: "flex", flexDirection: "column", gap: "20px" }}>
+        <Box
+          sx={{
+            display: "flex",
+            flexDirection: { xs: "row", md: "column" },
+            flexWrap: { xs: "wrap", md: "nowrap" },
+            gap: "20px",
+          }}
+        >
           <Button
             variant="contained"
             sx={{
               backgroundColor: "#00dbe3",
               borderRadius: "6px",
-              width: "352px",
+              width: { xs: "100%", sm: "352px" },
               height: "64px",
               fontSize: "24px",
               lineHeight: "60px",
@@ -127,7 +147,7 @@ const Dashboard = () => {
             sx={{
               backgroundColor: "#23a2bb",
               borderRadius: "6px",
-              width: "352px",
+              width: { xs: "100%", sm: "352px" },
               height: "64px",
               fontSize: "24px",
               lineHeight: "60px",
@@ -143,7 +163,7 @@ const Dashboard = () => {
             sx={{
               backgroundColor: "#173039",
               borderRadius: "6px",
-              width: "352px",
+              width: { xs: "100%", sm: "352px" },
               height: "64px",
               fontSize: "24px",
               lineHeight: "60px",
